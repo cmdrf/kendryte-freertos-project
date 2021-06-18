@@ -52,6 +52,5 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 		--output-format=binary
 		${CMAKE_BINARY_DIR}/${PROJECT_NAME}.elf
 		${CMAKE_BINARY_DIR}/${PROJECT_NAME}.bin
-	DEPENDS kendryte-freertos-project
 	COMMENT "Generating .bin file"
 )
