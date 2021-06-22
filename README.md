@@ -47,4 +47,6 @@ directory and add the file names to `CMakeLists.txt` (where `src/main.c` already
 - Current `develop` branch of the SDK does not work with this (it didn't even work on its
   own last time I tried).
 - `configTICK_RATE_HZ` must be set higher by a factor 50 than you want it to be.
-- Inter-processor interrupts probably won't work.
+- `printf` and other APIs relying on syscall don't work after the scheduler has started. 
+  This is due to the FreeRTOS trap handler intercepting the interrupts.
+- Inter-processor interrupts probably won't work for the same reason.
